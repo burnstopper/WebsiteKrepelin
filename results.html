@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="settingsStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="parent">
+        <div id="settingsTile">
+            <div id="upTile">
+                <a id="text">Результаты</a>
+                <button id="btnBack" onclick="window.location.href='main.html'">
+                </button>
+            </div>
+
+            <div id="middleTile">
+                <a id="time" class="rules">Время игры:</a>
+                <br>
+                <a id="allAns" class="rules">Всего примеров решено:</a>
+                <br>
+                <a id="ansInMin" class="rules">Примеров в минуту решено:</a>
+                <br>
+                <a id="countOfMistakes" class="rules">Правильно решено:</a>
+                <br>
+
+                <script>
+                    document.getElementById("time").innerHTML = "Время игры: " + localStorage.getItem('time_mins') + "." + localStorage.getItem('time_sec');
+                    document.getElementById("allAns").innerHTML = "Всего примеров решено: " + localStorage.getItem('all_answers');
+                    if (localStorage.getItem('time_mins') == "0") {
+                        document.getElementById("ansInMin").innerHTML = "Примеров в минуту решено: " + localStorage.getItem('all_answers');
+                    } else {
+                        a = Number(localStorage.getItem('time_mins'));
+                        b = Number(localStorage.getItem('time_sec')) / 60;
+                        console.log(a + b);
+                        countInMin = Number(localStorage.getItem('all_answers')) / (a + b);
+                        document.getElementById("ansInMin").innerHTML = "Примеров в минуту решено: " + Math.round(countInMin * 100) / 100;
+                    }
+                    document.getElementById("countOfMistakes").innerHTML = "Правильно решено: " + localStorage.getItem('correct_answers');
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

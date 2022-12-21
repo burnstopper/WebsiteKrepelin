@@ -1,0 +1,85 @@
+#timer {
+    /**display: table;**/
+    position: relative;
+    top: 25px;
+    left: 50px;
+    font-family: 'Inter';
+    font-size: 20px;
+}
+
+#btnStop {
+    float: right;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 22px;
+    margin-top: 25px;
+    margin-right: 50px;
+    width: 30%;
+    height: 50px;
+    align-items: center;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#middleTile {
+    text-align: center;
+}
+
+#operation {
+    position: absolute;
+    top: 170px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 165px;
+    line-height: 155px;
+    color: #547272;
+}
+
+#downTile {
+    margin-top: 360px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    background-color: coral;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#secondRow {
+    margin-top: 130px;
+}
+
+#btn0, #btn5 {
+    left: 15%
+}
+
+#btn1, #btn6 {
+    left: 30%
+}
+
+#btn2, #btn7 {
+    left: 45%
+}
+
+#btn3, #btn8 {
+    left: 60%
+}
+
+#btn4, #btn9 {
+    left: 75%
+}

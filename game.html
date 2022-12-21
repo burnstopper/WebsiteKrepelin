@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="gameStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="parent">
+        <script src="gameProcess.js"></script>
+        <div id="upTile">
+            <a id="timer">Времени прошло: 0.00</a>
+            <button id="btnStop" onclick="window.location.href='results.html'">
+                Надоело
+            </button>
+        </div>
+        <div id="middleTile">
+            <a id="operation">0+0</a>
+            <br>
+        </div>
+        <div id="downTile">
+            <div id="firstRow">
+                <button class="btn" id="btn0" onclick=readClick(0)>0</button>
+                <button class="btn" id="btn1" onclick=readClick(1)>1</button>
+                <button class="btn" id="btn2" onclick=readClick(2)>2</button>
+                <button class="btn" id="btn3" onclick=readClick(3)>3</button>
+                <button class="btn" id="btn4" onclick=readClick(4)>4</button>
+            </div>
+            <div id="secondRow">
+                <button class="btn" id="btn5" onclick=readClick(5)>5</button>
+                <button class="btn" id="btn6" onclick=readClick(6)>6</button>
+                <button class="btn" id="btn7" onclick=readClick(7)>7</button>
+                <button class="btn" id="btn8" onclick=readClick(8)>8</button>
+                <button class="btn" id="btn9" onclick=readClick(9)>9</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
