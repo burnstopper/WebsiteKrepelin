@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="settingsStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="parent">
+        <div id="settingsTile">
+            <div id="upTile">
+                <a id="text">Настройки</a>
+                <button id="btnBack" onclick="window.location.href='main.html'">
+                </button>
+            </div>
+
+            <div id="middleTile">
+                <a class="operation">Операции</a>
+                <br>
+                <select id="selectID">
+                    <option value="2">Сложение</option>
+                    <option value="1">Умножение</option>
+                </select>
+                <script>
+                    selectID.value = localStorage.getItem('game_type');
+                    selectID.oninput = () => {
+                      localStorage.setItem('game_type', selectID.value)
+                      console.log(localStorage.getItem('game_type'));
+                    };
+                </script>
+            </div>
+
+            <div id="downTile">
+                <button id="btnPlay" onclick="window.location.href='game.html'">
+                    Играть
+                </button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

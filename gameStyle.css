@@ -1,0 +1,102 @@
+#upTile {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#timer {
+    /**display: table;**/
+    position: relative;
+    padding-top: 25px;
+    padding-left: 50px;
+    font-family: 'Inter';
+    font-size: 20px;
+}
+
+#btnStop {
+    float: right;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 22px;
+    margin-top: 25px;
+    margin-right: 50px;
+    width: 30%;
+    height: 50px;
+    align-items: center;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#container2 {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+#text {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.rules {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 20px;
+}
+
+#middleTile {
+    text-align: center;
+}
+
+#operationTile {
+    text-align: center;
+    width: -webkit-fill-available;
+}
+
+#operationBlock {
+    margin-bottom: 20px;
+}
+
+#operation {
+    top: 170px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 165px;
+    line-height: 155px;
+    color: #547272;
+}
+
+#rulesTile {
+    padding-left: 5%;
+}
+
+#downTile {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    width: 100px;
+    height: 80px;
+    background-color: coral;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#secondRow {
+    margin-top: 10px;
+}
