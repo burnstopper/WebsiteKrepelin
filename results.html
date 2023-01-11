@@ -26,6 +26,11 @@
                 <br>
                 <a id="countOfMistakes" class="rules">Правильно решено:</a>
                 <br>
+                <div id="downTile">
+                    <button id="btnPlay" onclick=writeIntoFile()>
+                        Выгрузить результат
+                    </button>
+                </div>
 
                 <script>
                     document.getElementById("time").innerHTML = "Время игры: " + localStorage.getItem('time_mins') + "." + localStorage.getItem('time_sec');
@@ -40,6 +45,52 @@
                         document.getElementById("ansInMin").innerHTML = "Примеров в минуту решено: " + Math.round(countInMin * 100) / 100;
                     }
                     document.getElementById("countOfMistakes").innerHTML = "Правильно решено: " + localStorage.getItem('correct_answers');
+
+                    function download(content, fileName, contentType) {
+                        var a = document.createElement("a");
+                        var file = new Blob([content], { type: contentType });
+                        a.href = URL.createObjectURL(file);
+                        a.download = fileName;
+                        a.click();
+                    }
+
+                    function writeIntoFile() {
+                        var fileName = (new Date().toLocaleString()).toString()
+                        fileName += '.txt'
+                        download(getLocalStorage(), fileName, 'text/plain');
+                    }
+
+                    function getLocalStorage() {
+                        var b = {};
+                        b['game_type'] = {};
+                        b['time_of_given_question'] = {};
+                        b['question_digits'] = {};
+                        b['user_answer'] = {};
+                        b['correct_number'] = {};
+                        for (var i = 0; i < localStorage.length; i++) {
+                            var k = localStorage.key(i);
+                            var v = localStorage.getItem(k);
+                            if (localStorage.key(i) == 'game_type') {
+                                b['game_type'] = v;
+                            } else if (localStorage.key(i) == 'time_of_given_question') {
+                                b['time_of_given_question'] = v;
+                            } else if (localStorage.key(i) == 'question_digits') {
+                                b['question_digits'] = v;
+                            } else if (localStorage.key(i) == 'user_answer') {
+                                b['user_answer'] = v;
+                            } else if (localStorage.key(i) == 'correct_number') {
+                                b['correct_number'] = v;
+                            }
+                        }
+                        var a = {};
+                        a['game_type'] = b['game_type']
+                        a['time_of_given_question'] = b['time_of_given_question']
+                        a['question_digits'] = b['question_digits']
+                        a['user_answer'] = b['user_answer']
+                        a['correct_number'] = b['correct_number']
+                        var s = JSON.stringify(a);
+                        return s;
+                    }
                 </script>
             </div>
         </div>
