@@ -50,7 +50,7 @@ function readClick(num) {
     question_digits.push(new Array([rand1, rand2]))
     localStorage.setItem('question_digits', question_digits)
 
-    if (localStorage.getItem('game_type') == "2") {
+    if (localStorage.getItem('game_type') == "1") {
         console.log(rand1 + "+" + rand2 + "=" + num);
         document.getElementById("operation").innerHTML = rand1 + "+" + rand2;
         countOfAnswers += 1;
@@ -69,7 +69,7 @@ function readClick(num) {
             localStorage.setItem('answers', answers);
         }
     }
-    else if (localStorage.getItem('game_type') == "1") {
+    else if (localStorage.getItem('game_type') == "0") {
         console.log(rand1 + "*" + rand2 + "=" + num);
         document.getElementById("operation").innerHTML = rand1 + "*" + rand2;
         countOfAnswers += 1;
@@ -90,21 +90,21 @@ function readClick(num) {
     }
     rand1 = Math.floor(Math.random() * (max - min)) + min;
     rand2 = Math.floor(Math.random() * (max - min)) + min;
-    if (localStorage.getItem('game_type') == "2") {
+    if (localStorage.getItem('game_type') == "1") {
         document.getElementById("operation").innerHTML = rand1 + "+" + rand2;
     }
-    else if (localStorage.getItem('game_type') == "1") {
+    else if (localStorage.getItem('game_type') == "0") {
         document.getElementById("operation").innerHTML = rand1 + "*" + rand2;
     }
 }
 
 window.onload = function () {
 
-    if (localStorage.getItem('game_type') == "2") {
+    if (localStorage.getItem('game_type') == "1") {
         console.log("ADDDDDD");
         document.getElementById("operation").innerHTML = rand1 + "+" + rand2;
     }
-    else if (localStorage.getItem('game_type') == "1") {
+    else if (localStorage.getItem('game_type') == "0") {
         console.log("MUUUU");
         document.getElementById("operation").innerHTML = rand1 + "*" + rand2;
     }
