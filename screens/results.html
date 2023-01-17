@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="settingsStyle.css">
+    <link rel="stylesheet" href="../styles/settingsStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
@@ -56,8 +56,8 @@
 
                     function writeIntoFile() {
                         var fileName = (new Date().toLocaleString()).toString()
-                        fileName += '.txt'
-                        download(getLocalStorage(), fileName, 'text/plain');
+                        fileName += '.json'
+                        download(getLocalStorage(), fileName, 'application/json');
                     }
 
                     function getLocalStorage() {
@@ -82,14 +82,64 @@
                                 b['correct_number'] = v;
                             }
                         }
-                        var a = {};
-                        a['game_type'] = b['game_type']
-                        a['time_of_given_question'] = b['time_of_given_question']
-                        a['question_digits'] = b['question_digits']
-                        a['user_answer'] = b['user_answer']
-                        a['correct_number'] = b['correct_number']
-                        var s = JSON.stringify(a);
-                        return s;
+                        // var a = {};
+                        // for (var i = 0; i < b['correct_number'].length; i++) {
+                        //     var key = b['correct_number'](i);
+                        //     var item = JSON.parse(key);
+                        //     a['correct_number'](i) = item;
+                        // }
+                        // a['correct_number'] = b['correct_number']
+                        // a['game_type'] = b['game_type']
+                        // a['time_of_given_question'] = b['time_of_given_question']
+                        // a['question_digits'] = b['question_digits']
+                        // a['user_answer'] = b['user_answer']
+                        // var s = JSON.stringify(a);
+                        a = b['correct_number']
+                        c = b['game_type']
+                        d = b['time_of_given_question']
+                        e = b['question_digits']
+                        f = b['user_answer']
+                        var str = "{\"correct_number\": [";
+                        for (var j = 0; j < a.length; j++) {
+                            if (j == a.length - 1) {
+                                str += a[j] + "], "
+                            } else if (a[j] != ',') {
+                                str += a[j] + ", "
+                            }
+                        }
+                        str += "\"game_type\": " + c
+                        str += ", \"question_digits\": ["
+                        for (var j = 0; j < e.length - 2; j += 4) {
+                            if (j == e.length - 3) {
+                                str += "[" + e[j] + ", " + e[j+2] + "]"
+                            } else if (e[j] != ',') {
+                                str += "[" + e[j] + ", " + e[j+2] + "], "
+                            }
+                        }
+                        str += "], \"time_of_given_question\": ["
+                        for (var j = 0; j < d.length; j++) {
+                            str += "\""
+                            while (d[j] != ',' && j < d.length) {
+                                str += d[j]
+                                j++
+                            }
+                            if (j == d.length) {
+                                str += "]"
+                            } else {
+                                str += "\", "
+                            }
+                        }
+                        str += "], \"user_answer\": ["
+                        for (var j = 0; j < f.length; j++) {
+                            if (j == f.length - 1) {
+                                str += "\"" + f[j] + "\""
+                            } else if (f[j] != ',') {
+                                str += "\"" + f[j] + "\", "
+                            }
+                        }
+                        str += "]}"
+                        console.log(str)
+                        return str;
                     }
                 </script>
             </div>

@@ -7,7 +7,7 @@ rand1 = Math.floor(Math.random() * (max - min)) + min;
 rand2 = Math.floor(Math.random() * (max - min)) + min;
 
 var time_of_given_question = new Array();
-time_of_given_question.push(new Date().toLocaleString());
+time_of_given_question.push(new Date().toISOString());
 localStorage.setItem('time_of_given_question', time_of_given_question)
 var question_digits = new Array();
 localStorage.setItem('question_digits', [])
@@ -43,7 +43,7 @@ var downloadTimer = setInterval(function () {
 }, 1000);
 
 function readClick(num) {
-    time_of_given_question.push(new Date().toLocaleString())
+    time_of_given_question.push(new Date().toISOString())
     localStorage.setItem('time_of_given_question', time_of_given_question)
     user_answer.push(num)
     localStorage.setItem('user_answer', user_answer)
