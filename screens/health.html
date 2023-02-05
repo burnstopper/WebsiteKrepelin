@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../styles/settingsStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="parent">
+        <div id="settingsTile">
+            <div id="upTile">
+                <a id="text">Самочувствие</a>
+                <button id="btnBack" onclick="window.location.href='main.html'">
+                </button>
+            </div>
+
+            <div id="middleTile">
+                <a id="countOfMistakes" class="rules">Оцените по шкале от 0 до 10 ваше</a>
+                <br>
+                <a id="demo1" class="rules">- общее самочувствие (0)</a>
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange1">
+                </div>
+                <br>
+                <a id="demo2" class="rules">- настроение (0)</a>
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange2">
+                </div>
+                <br>
+                <a id="demo3" class="rules">- работоспособность (0)</a>
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange3">
+                </div>
+                <br>
+                <a id="countOfMistakes" class="rules">Где 0 - плохо себя чувствую, 10 - чувствую себя отлично</a>
+
+
+                <script>
+                    var slider1 = document.getElementById("myRange1");
+                    var output1 = document.getElementById("demo1");
+                    output1.innerHTML = '- общее самочувствие (' + slider1.value + ')';
+                    slider1.oninput = function () {
+                        output1.innerHTML = '- общее самочувствие (' + this.value + ')';
+                    }
+
+                    var slider2 = document.getElementById("myRange2");
+                    var output2 = document.getElementById("demo2");
+                    output2.innerHTML = '- настроение (' + slider2.value + ')';
+                    slider2.oninput = function () {
+                        output2.innerHTML = '- настроение (' + this.value + ')';
+                    }
+
+                    var slider3 = document.getElementById("myRange3");
+                    var output3 = document.getElementById("demo3");
+                    output3.innerHTML = '- работоспособность (' + slider3.value + ')';
+                    slider3.oninput = function () {
+                        output3.innerHTML = '- работоспособность (' + this.value + ')';
+                    }
+                </script>
+            </div>
+            <div id="downTile">
+                <button id="btnPlay" onclick="window.location.href='settings.html'">
+                    Далее
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

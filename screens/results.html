@@ -25,7 +25,8 @@
                 <a id="ansInMin" class="rules">Примеров в минуту решено:</a>
                 <br>
                 <a id="countOfMistakes" class="rules">Правильно решено:</a>
-                <br>
+            </div>
+            <br>
                 <div id="downTile">
                     <button id="btnPlay" onclick=writeIntoFile()>
                         Выгрузить результат
@@ -46,9 +47,34 @@
                     }
                     document.getElementById("countOfMistakes").innerHTML = "Правильно решено: " + localStorage.getItem('correct_answers');
 
+                    // Special for you (SENDING POST) ^^
+                    // function sendRequest(info) {
+                    //     var http = new XMLHttpRequest();
+                    //     var url = 'http://localhost:8080/coaches/add'; //// change url
+                    //     http.open('POST', url, true);
+
+                    //     //Send the proper header information along with the request
+                    //     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+                    //     console.log(http.responseText)
+
+                    //     http.onreadystatechange = function () {
+                    //         if (http.readyState == 4 && http.status == 200) {
+                    //             alert(http.responseText);
+
+                    //         }
+                    //     }
+                    //     http.send(info);
+                    //     console.log("Success")
+                    // }
+
                     function download(content, fileName, contentType) {
                         var a = document.createElement("a");
+                        console.log(content)
                         var file = new Blob([content], { type: contentType });
+
+                        // sendRequest(content)
+
                         a.href = URL.createObjectURL(file);
                         a.download = fileName;
                         a.click();
@@ -111,9 +137,9 @@
                         str += ", \"question_digits\": ["
                         for (var j = 0; j < e.length - 2; j += 4) {
                             if (j == e.length - 3) {
-                                str += "[" + e[j] + ", " + e[j+2] + "]"
+                                str += "[" + e[j] + ", " + e[j + 2] + "]"
                             } else if (e[j] != ',') {
-                                str += "[" + e[j] + ", " + e[j+2] + "], "
+                                str += "[" + e[j] + ", " + e[j + 2] + "], "
                             }
                         }
                         str += "], \"time_of_given_question\": ["
@@ -142,7 +168,6 @@
                         return str;
                     }
                 </script>
-            </div>
         </div>
     </div>
 </body>
