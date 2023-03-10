@@ -12,14 +12,13 @@
     <div class="parent">
         <div id="settingsTile">
             <div id="upTile">
-                <a id="text">Настройки</a>
+                <a class="text_header">Настройки</a>
                 <button id="btnBack" onclick="window.location.href='main.html'">
                 </button>
             </div>
 
-            <div id="middleTile">
+            <div id="middleTile" style="align-items: start;">
                 <a class="operation">Операции</a>
-                <br>
                 <select id="selectID">
                     <option value="1">Сложение</option>
                     <option value="0">Умножение</option>
@@ -33,8 +32,8 @@
                 </script>
             </div>
 
-            <div id="downTile">
-                <button id="btnPlay" onclick="window.location.href='game.html'">
+            <div class="btn_down_tile" id="downTile">
+                <button class="btn_default" onclick="window.location.href='game.html'">
                     Играть
                 </button>
             </div>

@@ -12,12 +12,12 @@
     <div class="parent">
         <div id="settingsTile">
             <div id="upTile">
-                <a id="text">Результаты</a>
+                <a class="text_header">Результаты</a>
                 <button id="btnBack" onclick="window.location.href='main.html'">
                 </button>
             </div>
 
-            <div id="middleTile">
+            <div id="middleTile" style="align-items: start;">
                 <a id="time" class="rules">Время игры:</a>
                 <br>
                 <a id="allAns" class="rules">Всего примеров решено:</a>
@@ -27,8 +27,8 @@
                 <a id="countOfMistakes" class="rules">Правильно решено:</a>
             </div>
             <br>
-                <div id="downTile">
-                    <button id="btnPlay" onclick=writeIntoFile()>
+                <div class="btn_down_tile" id="downTile">
+                    <button class="btn_default" onclick=writeIntoFile()>
                         Выгрузить результат
                     </button>
                 </div>

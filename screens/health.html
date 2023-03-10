@@ -12,7 +12,7 @@
     <div class="parent">
         <div id="settingsTile">
             <div id="upTile">
-                <a id="text">Самочувствие</a>
+                <a class="text_header">Самочувствие</a>
                 <button id="btnBack" onclick="window.location.href='main.html'">
                 </button>
             </div>
@@ -22,20 +22,25 @@
                 <br>
                 <a id="demo1" class="rules">- общее самочувствие (0)</a>
                 <div class="slidecontainer">
+                    <div class="before_range">ужасно себя чувствую</div>
                     <input type="range" min="0" max="10" value="5" class="slider" id="myRange1">
+                    <div class="after_range">чувствую себя исключительно бодро</div>
                 </div>
                 <br>
                 <a id="demo2" class="rules">- настроение (0)</a>
                 <div class="slidecontainer">
+                    <div class="before_range">очень плохое настроение</div>
                     <input type="range" min="0" max="10" value="5" class="slider" id="myRange2">
+                    <div class="after_range">отличное настроение</div>
                 </div>
                 <br>
                 <a id="demo3" class="rules">- работоспособность (0)</a>
                 <div class="slidecontainer">
+                    <div class="before_range">совершенно не могу работать</div>
                     <input type="range" min="0" max="10" value="5" class="slider" id="myRange3">
+                    <div class="after_range" id="workness">отличная работоспособность</div>
                 </div>
                 <br>
-                <a id="countOfMistakes" class="rules">Где 0 - плохо себя чувствую, 10 - чувствую себя отлично</a>
 
 
                 <script>
@@ -61,8 +66,8 @@
                     }
                 </script>
             </div>
-            <div id="downTile">
-                <button id="btnPlay" onclick="window.location.href='settings.html'">
+            <div class="btn_down_tile" id="downTile">
+                <button class="btn_default" onclick="window.location.href='rules.html'">
                     Далее
                 </button>
             </div>

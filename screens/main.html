@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="../styles/mainStyle.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="parent">
-            <a id="text">Тесты</a>
-            <button id="btnKrepelin" onclick="window.location.href='health.html'">
-                <img id="imgMath" src="../images/math.png" alt=""> 
+
+<head>
+    <link rel="stylesheet" href="../styles/mainStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="parent">
+        <div id="header">
+            <div id="headerTextContainer">
+                <a class="text_header" id="welcomeText">Добро пожаловать</a>
+                <a class="text_title_green">Проходите тесты;</a>
+                <a class="text_title_green">Результаты останутся с Вами;</a>
+                <a class="text_title_green">Примите участие в исследовании.</a>
+            </div>
+            <img id="mainImg" src="../images/backMain.png" alt="">
+        </div>
+        <div id="line"></div>
+        <a class="text_header">Тесты</a>
+        <div id="btn_container">
+            <button class="btn_tile" id="btnLeft" onclick="window.location.href='health.html'">
+                <img class="btn_img" src="../images/math.png" alt="">
                 Тест Крепелина
+            </button>
+            <button class="btn_tile" onclick="window.location.href='diary.html'">
+                <img class="btn_img" src="../images/checklist.png" alt="">
+                Дневник самонаблюдения
             </button></p>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../styles/settingsStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="parent">
+        <div id="settingsTile">
+            <div id="upTile">
+                <a class="text_header">Дневник самонаблюдения</a>
+                <button id="btnBack" onclick="window.location.href='main.html'">
+                </button>
+            </div>
+
+            <div id="middleTile">
+                <a id="countOfMistakes" class="rules">Оцените по шкале от 0 до 10 ваше</a>
+                <br>
+                <a id="demo1" class="rules">- общее самочувствие (0)</a>
+                <div class="slidecontainer">
+                    <div class="before_range">ужасно себя чувствую</div>
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange1">
+                    <div class="after_range">чувствую себя исключительно бодро</div>
+                </div>
+                <br>
+                <a id="demo2" class="rules">- настроение (0)</a>
+                <div class="slidecontainer">
+                    <div class="before_range">очень плохое настроение</div>
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange2">
+                    <div class="after_range">отличное настроение</div>
+                </div>
+                <br>
+                <a id="demo3" class="rules">- работоспособность (0)</a>
+                <div class="slidecontainer">
+                    <div class="before_range">совершенно не могу работать</div>
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange3">
+                    <div class="after_range" id="workness">отличная работоспособность</div>
+                </div>
+                <br>
+                <a id="demo4" class="rules">- сон (0)</a>
+                <div class="slidecontainer">
+                    <div class="before_range">очень плохо спал, бессоница</div>
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange4">
+                    <div class="after_range">отличный сон, выспался</div>
+                </div>
+                <br>
+                <a id="demo5" class="rules">- физическая активность (0)</a>
+                <div class="slidecontainer">
+                    <div class="before_range">не было физической активности</div>
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange5">
+                    <div class="after_range">много физической активности, занятия физкультурой</div>
+                </div>
+                <br>
+                <a id="demo6" class="rules">- вредные привычки (алкоголь, сигареты, игры) (0)</a>
+                <div class="slidecontainer">
+                    <div class="before_range">полностью воздерживался</div>
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange6">
+                    <div class="after_range">много употреблял/играл</div>
+                </div>
+                <br>
+                <a id="demo7" class="rules">- отдых (0)</a>
+                <div class="slidecontainer">
+                    <div class="before_range">не делал перерывов совсем</div>
+                    <input type="range" min="0" max="10" value="5" class="slider" id="myRange7">
+                    <div class="after_range">уделял время качественному отдыху</div>
+                </div>
+                <br>
+
+                <script>
+                    var slider1 = document.getElementById("myRange1");
+                    var output1 = document.getElementById("demo1");
+                    output1.innerHTML = '- общее самочувствие (' + slider1.value + ')';
+                    slider1.oninput = function () {
+                        output1.innerHTML = '- общее самочувствие (' + this.value + ')';
+                    }
+
+                    var slider2 = document.getElementById("myRange2");
+                    var output2 = document.getElementById("demo2");
+                    output2.innerHTML = '- настроение (' + slider2.value + ')';
+                    slider2.oninput = function () {
+                        output2.innerHTML = '- настроение (' + this.value + ')';
+                    }
+
+                    var slider3 = document.getElementById("myRange3");
+                    var output3 = document.getElementById("demo3");
+                    output3.innerHTML = '- работоспособность (' + slider3.value + ')';
+                    slider3.oninput = function () {
+                        output3.innerHTML = '- работоспособность (' + this.value + ')';
+                    }
+
+                    var slider4 = document.getElementById("myRange4");
+                    var output4 = document.getElementById("demo4");
+                    output4.innerHTML = '- сон (' + slider4.value + ')';
+                    slider4.oninput = function () {
+                        output4.innerHTML = '- сон (' + this.value + ')';
+                    }
+
+                    var slider5 = document.getElementById("myRange5");
+                    var output5 = document.getElementById("demo5");
+                    output5.innerHTML = '- физическая активность (' + slider5.value + ')';
+                    slider5.oninput = function () {
+                        output5.innerHTML = '- физическая активность (' + this.value + ')';
+                    }
+
+                    var slider6 = document.getElementById("myRange6");
+                    var output6 = document.getElementById("demo6");
+                    output6.innerHTML = '- вредные привычки (алкоголь, сигареты, игры) (' + slider6.value + ')';
+                    slider6.oninput = function () {
+                        output6.innerHTML = '- вредные привычки (алкоголь, сигареты, игры) (' + this.value + ')';
+                    }
+
+                    var slider7 = document.getElementById("myRange7");
+                    var output7 = document.getElementById("demo7");
+                    output7.innerHTML = '- отдых (' + slider7.value + ')';
+                    slider7.oninput = function () {
+                        output7.innerHTML = '- отдых (' + this.value + ')';
+                    }
+                </script>
+            </div>
+            <div id="downTile">
+                <button class="btn_default" onclick="window.location.href='main.html'">
+                    Отправить
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -2,17 +2,16 @@ body {
     background: #DBDBDB;
 }
 
-#text {
-    /**display: table;**/
-    position: relative;
-    font-family: 'Inter';
+.text_header {
+   font-family: 'Inter';
     font-weight: 500;
     font-size: 58px;
 }
 
 .parent {
-    width: 100%;
-    height: 100%;
+    padding: 60px;
+    padding-left: 120px;
+    padding-right: 120px;
 }
 
 #upTile {
@@ -22,22 +21,46 @@ body {
 
 #downTile {
     text-align: end;
+    padding: 30px;
+    /* width: -webkit-fill-available; */
+    /* padding-right: 60px; */
+    /* position: absolute; */
+    /* bottom:0; */
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
+    padding-right: 30px;
+    /* width: -webkit-fill-available; */
+}
+
+.btn_down_tile {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    /* padding-right: 30px; */
+    width: -webkit-fill-available;
+}
+
+.before_range, .after_range {
+    width: 30%;
+    font-family: 'Inter';
+    font-weight: 300;
+}
+.before_range {
+    margin-right: 5%;
+}
+.after_range {
+    margin-left: 5%;
 }
 
 #settingsTile {
-    width: 80%;
-    height: 80%;
-    /* margin-left: auto;
-    margin-right: auto; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 635px;
+    position: relative;
+    /* justify-content: space-between; */
 }
 
 #btnBack {
@@ -61,11 +84,9 @@ body {
     height: 3px;
     background: coral;
 }
-
 #btnBack::before {
     transform: rotate(45deg);
 }
-
 #btnBack::after {
     transform: rotate(-45deg);
 }
@@ -76,25 +97,29 @@ body {
     font-weight: 300;
     font-size: 20px;
     text-align: left;
+    margin-top: 20px;
 }
 
 #middleTile {
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 3%;
+    width: 90%;
+    /* width: -webkit-fill-available; */
+    /* padding: 50px; */
+    /* padding-left: 100px; */
+    /* margin-top: 0; */
+    /* margin-top: 10px; */
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
 }
 
-#btnNext,
-#btnPlay {
+.btn_default {
     background-color: coral;
     color: white;
     border: none;
-    border-radius: 22px;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    border-radius: 8px;
     width: 30%;
     height: 50px;
-    align-items: center;
     font-family: 'Inter';
     font-weight: 300;
     font-size: 20px;
@@ -121,36 +146,27 @@ body {
 
 .slidecontainer {
     margin-top: 10px;
-    width: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-/* The slider itself */
 .slider {
     -webkit-appearance: none;
-    /* Override default CSS styles */
     appearance: none;
-    width: 100%;
-    /* Full-width */
+    width: 80%;
     height: 25px;
-    /* Specified height */
     background: #d3d3d3;
-    /* Grey background */
     outline: none;
-    /* Remove outline */
     opacity: 0.7;
-    /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s;
-    /* 0.2 seconds transition on hover */
     transition: opacity .2s;
 }
 
-/* Mouse-over effects */
 .slider:hover {
     opacity: 1;
-    /* Fully shown on mouse-over */
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -165,4 +181,25 @@ body {
     height: 25px;
     background: coral;
     cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+    .text_header {
+        font-size: 48px;
+    }
+    #workness {
+        word-break: break-all;
+    }
+}
+@media (max-width: 730px) {
+    .text_header {
+        font-size: 38px;
+        word-break: break-all;
+    }
+    .before_range, .after_range {
+        word-break: break-all;
+    }
+    #workness {
+        word-break: break-all;
+    }
 }

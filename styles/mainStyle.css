@@ -1,20 +1,56 @@
-#text {
-    padding-left: 100px;
+.text_header {
     font-family: 'Inter';
     font-weight: 500;
     font-size: 58px;
+    color: coral;
 }
 
 .parent {
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
+    padding: 80px;
 }
 
-#btnKrepelin {
+#header {
+    display: flex;
+    margin-top: 70px;
+    margin-bottom: 120px;
+}
+#headerTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-right: 50px;
+}
+#welcomeText {
+    margin-bottom: 30px;
+}
+.text_title_green {
+    color: #547272;
+    font-family: 'Inter';
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+#mainImg {
+    width: 55%;
+}
+
+#line {
+    height: 3px;
+    background-color: #547272;
+    margin-bottom: 30px;
+}
+
+#btn_container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    padding: 10px;
+    padding-top: 30px;
+}
+.btn_tile {
     background-color: white;
-    margin-left: 100px;
-    margin-top: 100px;
     width: 50%;
     height: 170px;
     display: flex;
@@ -25,7 +61,10 @@
     box-shadow: 10px 10px coral;
     cursor: pointer;
 }
-#imgMath {
+#btnLeft {
+    margin-right: 50px;
+}
+.btn_img {
     vertical-align: middle;
     width: 15%;
     float: left;
@@ -33,9 +72,34 @@
     margin-right: 8%;
 }
 
-@media (max-width: 730px) {
-    #btnKrepelin {
-        height: 100px;
+@media (max-width: 1250px) {
+    .text_header {
+        font-size: 48px;
+    }
+    .text_title_green {
         font-size: 18px;
+        margin-bottom: 15px;
+    }
+    #mainImg {
+        width: 45%;
+    }
+    .btn_tile {
+        height: 150px;
+        font-size: 19px;
+    }
+}
+@media (max-width: 730px) {
+    .text_header {
+        font-size: 38px;
+    }
+    .text_title_green {
+        font-size: 15px;
+    }
+    #mainImg {
+        width: 35%;
+    }
+    .btn_tile {
+        height: 130px;
+        font-size: 15px;
     }
 }
