@@ -20,7 +20,7 @@
     background-color: coral;
     color: white;
     border: none;
-    border-radius: 22px;
+    border-radius: 8px;
     margin-top: 25px;
     margin-right: 50px;
     width: 30%;
@@ -91,7 +91,7 @@
     height: 80px;
     background-color: coral;
     color: white;
-    border-radius: 15px;
+    border-radius: 8px;
     border: none;
     font-family: 'Inter';
     font-weight: 300;

@@ -11,6 +11,20 @@
     padding: 80px;
 }
 
+#btnRound {
+    border: none;
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    align-self: end;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 28px;
+    color: coral;
+    cursor: pointer;
+}
+
 #header {
     display: flex;
     margin-top: 70px;

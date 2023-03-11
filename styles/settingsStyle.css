@@ -22,23 +22,15 @@ body {
 #downTile {
     text-align: end;
     padding: 30px;
-    /* width: -webkit-fill-available; */
-    /* padding-right: 60px; */
-    /* position: absolute; */
-    /* bottom:0; */
     display: flex;
     justify-content: center;
     padding-right: 0;
-    /* position: absolute; */
-    /* bottom: 0; */
     padding-right: 30px;
-    /* width: -webkit-fill-available; */
 }
 
 .btn_down_tile {
     position: absolute;
     bottom: 0;
-    /* padding-right: 30px; */
     width: -webkit-fill-available;
 }
 
@@ -60,7 +52,6 @@ body {
     flex-direction: column;
     min-height: 635px;
     position: relative;
-    /* justify-content: space-between; */
 }
 
 #btnBack {
@@ -102,11 +93,6 @@ body {
 
 #middleTile {
     width: 90%;
-    /* width: -webkit-fill-available; */
-    /* padding: 50px; */
-    /* padding-left: 100px; */
-    /* margin-top: 0; */
-    /* margin-top: 10px; */
     display: flex;
     flex-direction: column;
     align-self: center;

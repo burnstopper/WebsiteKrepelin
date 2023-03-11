@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../styles/quizStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="parent">
+        <div id="upTile">
+            <a class="text_header">Исследования</a>
+            <input id="search" type="text" placeholder="Поиск..">
+            <button class="btn_icon btn_view" style="align-self: center;"
+                onclick="window.location.href='create_quiz.html'">+</button>
+            <button id="btnBack" onclick="window.location.href='main.html'">
+            </button>
+        </div>
+
+        <div id="btnTile">
+            <div class="quiz_tile">
+                <div class="text_quiz_tile">
+                    <a id="titleTile">Исследование 1</a>
+                    <a id="descTile">Прогресс: 30 %</a>
+                </div>
+                <div class="btn_quiz_func_container">
+                    <button class="btn_icon btn_view" onclick="window.location.href='view_quiz.html'">&#10149</button>
+                    <button class="btn_icon btn_edit" onclick="window.location.href='quizes.html'">&#9998</button>
+                    <button class="btn_icon btn_state" id="myButton1" onclick="changeIcon(id)">&#x23f8</button>
+                    <button class="btn_icon btn_delete" onclick="window.location.href='quizes.html'">&#128465</button>
+                </div>
+            </div>
+            </p>
+            <div class="quiz_tile">
+                <div class="text_quiz_tile">
+                    <a id="titleTile">Исследование 2</a>
+                    <a id="descTile">Прогресс: 35 %</a>
+                </div>
+                <div class="btn_quiz_func_container">
+                    <button class="btn_icon btn_view" onclick="window.location.href='quizes.html'">&#10149</button>
+                    <button class="btn_icon btn_edit" onclick="window.location.href='quizes.html'">&#9998</button>
+                    <button class="btn_icon btn_state" id="myButton2" onclick="changeIcon(id)">&#x23f8</button>
+                    <button class="btn_icon btn_delete" onclick="window.location.href='quizes.html'">&#128465</button>
+                </div>
+            </div>
+            </p>
+            <div class="quiz_tile">
+                <div class="text_quiz_tile">
+                    <a id="titleTile">Исследование 3</a>
+                    <a id="descTile">Прогресс: 20 %</a>
+                </div>
+                <div class="btn_quiz_func_container">
+                    <button class="btn_icon btn_view" onclick="window.location.href='quizes.html'">&#10149</button>
+                    <button class="btn_icon btn_edit" onclick="window.location.href='quizes.html'">&#9998</button>
+                    <button class="btn_icon btn_state" id="myButton3" onclick="changeIcon(id)">&#x23f5</button>
+                    <button class="btn_icon btn_delete" onclick="window.location.href='quizes.html'">&#128465</button>
+                </div>
+            </div>
+            </p>
+            <div class="quiz_tile">
+                <div class="text_quiz_tile">
+                    <a id="titleTile">Исследование 4</a>
+                    <a id="descTile">Прогресс: 70 %</a>
+                </div>
+                <div class="btn_quiz_func_container">
+                    <button class="btn_icon btn_view" onclick="window.location.href='quizes.html'">&#10149</button>
+                    <button class="btn_icon btn_edit" onclick="window.location.href='quizes.html'">&#9998</button>
+                    <button class="btn_icon btn_state" id="myButton4" onclick="changeIcon(id)">&#x23f5</button>
+                    <button class="btn_icon btn_delete" onclick="window.location.href='quizes.html'">&#128465</button>
+                </div>
+            </div>
+            </p>
+        </div>
+        <!-- <div id="DownPagination">
+            <div class="pagination">
+                <a href="#">&#10094;</a>
+                <a class="active" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&#10095;</a>
+            </div>
+        </div> -->
+
+        <script>
+            function changeIcon(id) // no ';' here
+            {
+                var elem = document.getElementById(id);
+                if (elem.textContent == "⏸") elem.textContent = "⏵";
+                else elem.textContent = "⏸";
+            }
+
+            // fetch('http://localhost:8080/researches/getAll')
+            //     .then(response => response.json())
+            //     .then(data => console.log(data))
+            // fetch("http://localhost:8080/researches/getAll")
+            //     .then((response) => {
+            //         return response.json();
+            //     })
+            //     .then((data) => {
+            //         let researches = data;
+
+            //         researches.map(function (author) {
+            //             let li = document.createElement('li');
+            //             let name = document.createElement('h2');
+            //             let email = document.createElement('span');
+
+            //             // name.innerHTML = `${author.name}`;
+            //             // email.innerHTML = `${author.email}`;
+
+            //             // li.appendChild(name);
+            //             // li.appendChild(email);
+            //             // list.appendChild(li);
+            //         });
+            //     })
+            //     .catch(function (error) {
+            //         console.log(error);
+            //     });
+
+
+            // fetch("http://localhost:8080/researches/getAll", {
+            //     method: "GET",
+            // })
+            //     .then((response) => {
+            //         if (!response.ok) {
+            //             throw new Error(response.error)
+            //         }
+            //         return response.json();
+            //     })
+            //     .then(data => {
+            //         document.getElementById('messages').value = data.messages;
+            //     })
+            //     .catch(function (error) {
+            //         document.getElementById('messages').value = error;
+            //     });
+
+            // ul.appendChild(list);
+        </script>
+    </div>
+</body>
+
+</html>
