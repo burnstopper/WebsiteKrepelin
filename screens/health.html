@@ -47,8 +47,13 @@
                     var slider1 = document.getElementById("myRange1");
                     var output1 = document.getElementById("demo1");
                     output1.innerHTML = '- общее самочувствие (' + slider1.value + ')';
+                    localStorage.setItem('health_state', 5)
+                    localStorage.setItem('mood', 5)
+                    localStorage.setItem('efficiency', 5)
                     slider1.oninput = function () {
                         output1.innerHTML = '- общее самочувствие (' + this.value + ')';
+                        localStorage.setItem('health_state', this.value)
+                        console.log(localStorage.getItem('health_state'));
                     }
 
                     var slider2 = document.getElementById("myRange2");
@@ -56,6 +61,8 @@
                     output2.innerHTML = '- настроение (' + slider2.value + ')';
                     slider2.oninput = function () {
                         output2.innerHTML = '- настроение (' + this.value + ')';
+                        localStorage.setItem('mood', this.value)
+                        console.log(localStorage.getItem('mood'));
                     }
 
                     var slider3 = document.getElementById("myRange3");
@@ -63,6 +70,8 @@
                     output3.innerHTML = '- работоспособность (' + slider3.value + ')';
                     slider3.oninput = function () {
                         output3.innerHTML = '- работоспособность (' + this.value + ')';
+                        localStorage.setItem('efficiency', this.value)
+                        console.log(localStorage.getItem('efficiency'));
                     }
                 </script>
             </div>

@@ -27,7 +27,8 @@ localStorage.setItem('answers', [])
 var downloadTimer = setInterval(function () {
     localStorage.setItem('time_mins', minutesLeft)
     localStorage.setItem('time_sec', secondsLeft)
-    if (minutesLeft >= 10) {
+    var time_all = localStorage.getItem('game_time')
+    if (minutesLeft >= localStorage.getItem('game_time')) {
         clearInterval(downloadTimer);
         document.getElementById("text").innerHTML = "Время вышло";
         window.location.href = 'results.html';
@@ -35,9 +36,9 @@ var downloadTimer = setInterval(function () {
         secondsLeft = 0;
         minutesLeft += 1;
     } else if (secondsLeft >= 0 && secondsLeft <= 9) {
-        document.getElementById("timer").innerHTML = "Времени прошло: " + minutesLeft + ".0" + secondsLeft;
+        document.getElementById("timer").innerHTML = "Времени прошло: " + minutesLeft + ".0" + secondsLeft + " / " + time_all + ".00";
     } else {
-        document.getElementById("timer").innerHTML = "Времени прошло: " + minutesLeft + "." + secondsLeft;
+        document.getElementById("timer").innerHTML = "Времени прошло: " + minutesLeft + "." + secondsLeft + " / " + time_all + ".00";
     }
     secondsLeft += 1;
 }, 1000);

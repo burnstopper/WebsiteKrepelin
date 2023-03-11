@@ -19,15 +19,30 @@
 
             <div id="middleTile" style="align-items: start;">
                 <a class="operation">Операции</a>
-                <select id="selectID">
+                <select class="dropdown" id="selectID">
                     <option value="1">Сложение</option>
                     <option value="0">Умножение</option>
                 </select>
                 <script>
                     selectID.value = localStorage.getItem('game_type');
                     selectID.oninput = () => {
-                      localStorage.setItem('game_type', selectID.value)
-                      console.log(localStorage.getItem('game_type'));
+                        localStorage.setItem('game_type', selectID.value)
+                        console.log(localStorage.getItem('game_type'));
+                    };
+                </script>
+                <br>
+                <a class="operation">Время игры</a>
+                <select class="dropdown" id="selectTime">
+                    <option value="3">3 минуты</option>
+                    <option value="5">5 минут</option>
+                    <option value="7">7 минут</option>
+                    <option value="10">10 минут</option>
+                </select>
+                <script>
+                    selectTime.value = localStorage.getItem('game_time');
+                    selectTime.oninput = () => {
+                        localStorage.setItem('game_time', selectTime.value)
+                        console.log(localStorage.getItem('game_time'));
                     };
                 </script>
             </div>

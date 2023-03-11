@@ -93,6 +93,11 @@
                         b['question_digits'] = {};
                         b['user_answer'] = {};
                         b['correct_number'] = {};
+
+                        b['health_state'] = {};
+                        b['mood'] = {};
+                        b['efficiency'] = {};
+                        b['game_time'] = {};
                         for (var i = 0; i < localStorage.length; i++) {
                             var k = localStorage.key(i);
                             var v = localStorage.getItem(k);
@@ -106,6 +111,14 @@
                                 b['user_answer'] = v;
                             } else if (localStorage.key(i) == 'correct_number') {
                                 b['correct_number'] = v;
+                            } else if (localStorage.key(i) == 'health_state') {
+                                b['health_state'] = v;
+                            } else if (localStorage.key(i) == 'mood') {
+                                b['mood'] = v;
+                            } else if (localStorage.key(i) == 'efficiency') {
+                                b['efficiency'] = v;
+                            } else if (localStorage.key(i) == 'game_time') {
+                                b['game_time'] = v;
                             }
                         }
                         // var a = {};
@@ -125,6 +138,10 @@
                         d = b['time_of_given_question']
                         e = b['question_digits']
                         f = b['user_answer']
+                        g = b['health_state']
+                        h = b['mood']
+                        i = b['efficiency']
+                        j = b['game_time']
                         var str = "{\"correct_number\": [";
                         for (var j = 0; j < a.length; j++) {
                             if (j == a.length - 1) {
@@ -163,7 +180,12 @@
                                 str += "\"" + f[j] + "\", "
                             }
                         }
-                        str += "]}"
+
+                        str += "], \"health_state\": " + g
+                        str += ", \"mood\": " + h
+                        str += ", \"efficiency\": " + i
+                        str += ", \"game_time\": " + j
+                        str += "}"
                         console.log(str)
                         return str;
                     }

@@ -120,7 +120,7 @@ body {
     text-align: left;
 }
 
-#selectID {
+.dropdown {
     width: 220px;
     height: 40px;
     margin-top: 20px;
