@@ -98,6 +98,9 @@
                         b['mood'] = {};
                         b['efficiency'] = {};
                         b['game_time'] = {};
+
+                        b['is_stopped'] = {};
+                        b['respondent_id'] = {};
                         for (var i = 0; i < localStorage.length; i++) {
                             var k = localStorage.key(i);
                             var v = localStorage.getItem(k);
@@ -119,6 +122,10 @@
                                 b['efficiency'] = v;
                             } else if (localStorage.key(i) == 'game_time') {
                                 b['game_time'] = v;
+                            } else if (localStorage.key(i) == 'is_stopped') {
+                                b['is_stopped'] = v;
+                            } else if (localStorage.key(i) == 'respondent_id') {
+                                b['respondent_id'] = v;
                             }
                         }
                         // var a = {};
@@ -142,6 +149,8 @@
                         h = b['mood']
                         i = b['efficiency']
                         j = b['game_time']
+                        k = b['is_stopped']
+                        l = b['respondent_id']
                         var str = "{\"correct_number\": [";
                         for (var j = 0; j < a.length; j++) {
                             if (j == a.length - 1) {
@@ -185,6 +194,8 @@
                         str += ", \"mood\": " + h
                         str += ", \"efficiency\": " + i
                         str += ", \"game_time\": " + j
+                        str += ", \"is_stopped\": \"" + k + "\""
+                        str += ", \"respondent_id\": \"" + l + "\""
                         str += "}"
                         console.log(str)
                         return str;

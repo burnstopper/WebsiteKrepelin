@@ -169,6 +169,17 @@ body {
     cursor: pointer;
 }
 
+
+#search {
+    padding: 3px 15px;
+    height: 33px;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 20px;
+    width: 190px;
+    margin-top: 20px;
+}
+
 @media (max-width: 1250px) {
     .text_header {
         font-size: 48px;

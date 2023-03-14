@@ -13,9 +13,17 @@
         <script src="../gameProcess.js"></script>
         <div id="upTile">
             <a id="timer">Времени прошло: 0.00</a>
-            <button id="btnStop" onclick="window.location.href='results.html'">
+            <button id="btnStop">
                 Надоело
             </button>
+            <script>
+                localStorage.setItem('is_stopped', "no")
+                btnStop.onclick = () => {
+                    window.location.href='results.html'
+                    localStorage.setItem('is_stopped', "yes")
+                    console.log(localStorage.getItem('is_stopped'));
+                };
+            </script>
         </div>
 
         <div id="container2">

@@ -39,10 +39,22 @@
                     <option value="10">10 минут</option>
                 </select>
                 <script>
+                    localStorage.setItem('game_time', 10)
                     selectTime.value = localStorage.getItem('game_time');
                     selectTime.oninput = () => {
                         localStorage.setItem('game_time', selectTime.value)
                         console.log(localStorage.getItem('game_time'));
+                    };
+                </script>
+                <br>
+                <a class="operation">ID респондента</a>
+                <input id="search" type="text" placeholder="Write something..">
+                <script>
+                    localStorage.setItem('respondent_id', "")
+                    search.value = localStorage.getItem('respondent_id');
+                    search.oninput = () => {
+                        localStorage.setItem('respondent_id', search.value)
+                        console.log(localStorage.getItem('respondent_id'));
                     };
                 </script>
             </div>

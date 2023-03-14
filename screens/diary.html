@@ -70,12 +70,31 @@
                 </div>
                 <br>
 
+                <a class="rules">ID респондента</a>
+                <input id="search" type="text" placeholder="Write something..">
+                <script>
+                    localStorage.setItem('respondent_id', "")
+                    search.value = localStorage.getItem('respondent_id');
+                    search.oninput = () => {
+                        localStorage.setItem('respondent_id', search.value)
+                        console.log(localStorage.getItem('respondent_id'));
+                    };
+                </script>
+
                 <script>
                     var slider1 = document.getElementById("myRange1");
                     var output1 = document.getElementById("demo1");
                     output1.innerHTML = '- общее самочувствие (' + slider1.value + ')';
+                    localStorage.setItem('health_state', 5)
+                    localStorage.setItem('mood', 5)
+                    localStorage.setItem('efficiency', 5)
+                    localStorage.setItem('dream', 5)
+                    localStorage.setItem('physical_activity', 5)
+                    localStorage.setItem('bad_habits', 5)
+                    localStorage.setItem('rest', 5)
                     slider1.oninput = function () {
                         output1.innerHTML = '- общее самочувствие (' + this.value + ')';
+                        localStorage.setItem('health_state', this.value)
                     }
 
                     var slider2 = document.getElementById("myRange2");
@@ -83,6 +102,7 @@
                     output2.innerHTML = '- настроение (' + slider2.value + ')';
                     slider2.oninput = function () {
                         output2.innerHTML = '- настроение (' + this.value + ')';
+                        localStorage.setItem('mood', this.value)
                     }
 
                     var slider3 = document.getElementById("myRange3");
@@ -90,6 +110,7 @@
                     output3.innerHTML = '- работоспособность (' + slider3.value + ')';
                     slider3.oninput = function () {
                         output3.innerHTML = '- работоспособность (' + this.value + ')';
+                        localStorage.setItem('efficiency', this.value)
                     }
 
                     var slider4 = document.getElementById("myRange4");
@@ -97,6 +118,7 @@
                     output4.innerHTML = '- сон (' + slider4.value + ')';
                     slider4.oninput = function () {
                         output4.innerHTML = '- сон (' + this.value + ')';
+                        localStorage.setItem('dream', this.value)
                     }
 
                     var slider5 = document.getElementById("myRange5");
@@ -104,6 +126,7 @@
                     output5.innerHTML = '- физическая активность (' + slider5.value + ')';
                     slider5.oninput = function () {
                         output5.innerHTML = '- физическая активность (' + this.value + ')';
+                        localStorage.setItem('physical_activity', this.value)
                     }
 
                     var slider6 = document.getElementById("myRange6");
@@ -111,6 +134,7 @@
                     output6.innerHTML = '- вредные привычки (алкоголь, сигареты, игры) (' + slider6.value + ')';
                     slider6.oninput = function () {
                         output6.innerHTML = '- вредные привычки (алкоголь, сигареты, игры) (' + this.value + ')';
+                        localStorage.setItem('bad_habits', this.value)
                     }
 
                     var slider7 = document.getElementById("myRange7");
@@ -118,14 +142,110 @@
                     output7.innerHTML = '- отдых (' + slider7.value + ')';
                     slider7.oninput = function () {
                         output7.innerHTML = '- отдых (' + this.value + ')';
+                        localStorage.setItem('rest', this.value)
                     }
                 </script>
             </div>
             <div id="downTile">
-                <button class="btn_default" onclick="window.location.href='main.html'">
+                <button class="btn_default" onclick=writeIntoFile()>
                     Отправить
                 </button>
             </div>
+
+            <script>
+                // Special for you (SENDING POST) ^^
+                // function sendRequest(info) {
+                //     var http = new XMLHttpRequest();
+                //     var url = 'http://localhost:8080/coaches/add'; //// change url
+                //     http.open('POST', url, true);
+
+                //     //Send the proper header information along with the request
+                //     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+                //     console.log(http.responseText)
+
+                //     http.onreadystatechange = function () {
+                //         if (http.readyState == 4 && http.status == 200) {
+                //             alert(http.responseText);
+
+                //         }
+                //     }
+                //     http.send(info);
+                //     console.log("Success")
+                // }
+
+                function download(content, fileName, contentType) {
+                    var a = document.createElement("a");
+                    console.log(content)
+                    var file = new Blob([content], { type: contentType });
+
+                    // sendRequest(content)
+
+                    a.href = URL.createObjectURL(file);
+                    a.download = fileName;
+                    a.click();
+                }
+
+                function writeIntoFile() {
+                    var fileName = (new Date().toLocaleString()).toString()
+                    fileName += '.json'
+                    download(getLocalStorage(), fileName, 'application/json');
+                }
+
+                function getLocalStorage() {
+                    var b = {};
+                    b['respondent_id'] = {};
+                    b['health_state'] = {};
+                    b['mood'] = {};
+                    b['efficiency'] = {};
+                    b['dream'] = {};
+                    b['physical_activity'] = {};
+                    b['bad_habits'] = {};
+                    b['rest'] = {};
+
+                    for (var i = 0; i < localStorage.length; i++) {
+                        var k = localStorage.key(i);
+                        var v = localStorage.getItem(k);
+                        if (localStorage.key(i) == 'respondent_id') {
+                            b['respondent_id'] = v;
+                        } else if (localStorage.key(i) == 'health_state') {
+                            b['health_state'] = v;
+                        } else if (localStorage.key(i) == 'mood') {
+                            b['mood'] = v;
+                        } else if (localStorage.key(i) == 'efficiency') {
+                            b['efficiency'] = v;
+                        } else if (localStorage.key(i) == 'dream') {
+                            b['dream'] = v;
+                        } else if (localStorage.key(i) == 'physical_activity') {
+                            b['physical_activity'] = v;
+                        } else if (localStorage.key(i) == 'bad_habits') {
+                            b['bad_habits'] = v;
+                        } else if (localStorage.key(i) == 'rest') {
+                            b['rest'] = v;
+                        }
+                    }
+                    a = b['respondent_id']
+                    c = b['health_state']
+                    d = b['mood']
+                    e = b['efficiency']
+                    f = b['dream']
+                    g = b['physical_activity']
+                    h = b['bad_habits']
+                    i = b['rest']
+
+                    var str = "{\"respondent_id\": \"" + a + "\""
+                    str += ", \"health_state\": " + c
+                    str += ", \"mood\": " + d
+                    str += ", \"efficiency\": " + e
+                    str += ", \"dream\": " + f
+                    str += ", \"physical_activity\": " + g
+                    str += ", \"bad_habits\": " + h
+                    str += ", \"rest\": " + i
+                    str += "}"
+                    console.log(str)
+                    return str;
+                }
+            </script>
         </div>
     </div>
 </body>
