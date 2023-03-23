@@ -27,11 +27,11 @@
                 <a id="countOfMistakes" class="rules">Правильно решено:</a>
             </div>
             <br>
-                <div class="btn_down_tile" id="downTile">
+                <!-- <div class="btn_down_tile" id="downTile">
                     <button class="btn_default" onclick=writeIntoFile()>
                         Выгрузить результат
                     </button>
-                </div>
+                </div> -->
 
                 <script>
                     document.getElementById("time").innerHTML = "Время игры: " + localStorage.getItem('time_mins') + "." + localStorage.getItem('time_sec');
@@ -47,6 +47,7 @@
                     }
                     document.getElementById("countOfMistakes").innerHTML = "Правильно решено: " + localStorage.getItem('correct_answers');
 
+                    writeIntoFile()
                     // Special for you (SENDING POST) ^^
                     // function sendRequest(info) {
                     //     var http = new XMLHttpRequest();
@@ -128,6 +129,7 @@
                                 b['respondent_id'] = v;
                             }
                         }
+
                         // var a = {};
                         // for (var i = 0; i < b['correct_number'].length; i++) {
                         //     var key = b['correct_number'](i);
@@ -148,9 +150,10 @@
                         g = b['health_state']
                         h = b['mood']
                         i = b['efficiency']
-                        j = b['game_time']
+                        m = b['game_time']
                         k = b['is_stopped']
                         l = b['respondent_id']
+
                         var str = "{\"correct_number\": [";
                         for (var j = 0; j < a.length; j++) {
                             if (j == a.length - 1) {
@@ -193,7 +196,7 @@
                         str += "], \"health_state\": " + g
                         str += ", \"mood\": " + h
                         str += ", \"efficiency\": " + i
-                        str += ", \"game_time\": " + j
+                        str += ", \"game_time\": " + m
                         str += ", \"is_stopped\": \"" + k + "\""
                         str += ", \"respondent_id\": \"" + l + "\""
                         str += "}"

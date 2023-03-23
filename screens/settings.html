@@ -27,7 +27,6 @@
                     selectID.value = localStorage.getItem('game_type');
                     selectID.oninput = () => {
                         localStorage.setItem('game_type', selectID.value)
-                        console.log(localStorage.getItem('game_type'));
                     };
                 </script>
                 <br>
@@ -43,7 +42,6 @@
                     selectTime.value = localStorage.getItem('game_time');
                     selectTime.oninput = () => {
                         localStorage.setItem('game_time', selectTime.value)
-                        console.log(localStorage.getItem('game_time'));
                     };
                 </script>
                 <br>
@@ -54,7 +52,6 @@
                     search.value = localStorage.getItem('respondent_id');
                     search.oninput = () => {
                         localStorage.setItem('respondent_id', search.value)
-                        console.log(localStorage.getItem('respondent_id'));
                     };
                 </script>
             </div>
